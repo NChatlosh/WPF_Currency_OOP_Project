@@ -1,0 +1,18 @@
+﻿<Window x:Class="WPFCurrency.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFCurrency"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <StackPanel Orientation="Vertical" x:Name="MainPanel" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button Content="Make Change" Margin="5" MinWidth="200" MinHeight="80" x:Name="MakeChange" Click="MakeChange_Click"/>
+                <Button Content="Edit Repo" Margin="5" MinWidth="200" MinHeight="80" x:Name="Edit" Click="Edit_Click"/>
+            </StackPanel>
+            
+        </StackPanel>
+    </Grid>
+</Window>

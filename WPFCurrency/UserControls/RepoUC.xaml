@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="WPFCurrency.UserControls.RepoUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPFCurrency.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Label Content="Repo Value: " FontSize="18" Margin="5"/>
+                <TextBlock Margin="5" MinWidth="100" FontSize="18" Text="{Binding Total, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+            <Separator />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Label Content="Coin" Margin="5"/>
+                    <ComboBox MinWidth="100" MaxHeight="25" x:Name="Cb"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="15, 0, 0,0">
+                    <Button Content="Add" MinWidth="80" MaxHeight="25" Command="{Binding AddCommand}" CommandParameter="{Binding ElementName=Cb,Path=SelectedItem}"/>
+                    <TextBox MinWidth="50" Margin="5" MinHeight="10" Text="{Binding Quantity, Mode=TwoWay}"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Right">
+                <Button Content="Load" MinWidth="80" Margin="0,5,61,0" MaxHeight="25" MinHeight="25" Command="{Binding LoadCommand}"/>
+                <Button Content="Save" MinWidth="80" Margin="0,10,61,0" MaxHeight="25" MinHeight="25" Command="{Binding SaveCommand}"/>
+                <Button Content="New" MinWidth="80" Margin="0,10,61,0" MaxHeight="25" MinHeight="25" Command="{Binding NewCommand}"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>
